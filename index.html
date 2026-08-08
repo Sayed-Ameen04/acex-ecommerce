@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AceX.in — Electronics, Specified.</title>
+<meta name="description" content="AceX.in — a modern electronics storefront. Portfolio frontend project, no live backend or payments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#top" class="logo" aria-label="AceX.in home">
+      <span class="logo-mark">AceX<span class="logo-dot">.in</span></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#shop">Shop</a>
+      <a href="#deals">Deals</a>
+      <a href="#trust">Support</a>
+      <a href="#footer">Contact</a>
+    </nav>
+
+    <div class="nav-search">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.6"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <input type="text" id="searchInput" placeholder="Search SKU, name, category…" aria-label="Search products">
+    </div>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="wishlistBtn" aria-label="Wishlist">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7.5-4.6-10-9.1C.5 8.4 2 4.8 5.6 4.1 8 3.6 10.3 4.8 12 7c1.7-2.2 4-3.4 6.4-2.9 3.6.7 5.1 4.3 3.6 7.8C19.5 16.4 12 21 12 21z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span class="count-badge" id="wishlistCount">0</span>
+      </button>
+      <button class="icon-btn" id="cartBtn" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 4h2l1.4 12.6a2 2 0 0 0 2 1.8h8.6a2 2 0 0 0 2-1.7L20.3 8H6.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="21" r="1.4" fill="currentColor"/><circle cx="17.5" cy="21" r="1.4" fill="currentColor"/></svg>
+        <span class="count-badge" id="cartCount">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div id="top"></div>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">/ AX-2026 CATALOG</p>
+        <h1>Electronics,<br>specified — not sold.</h1>
+        <p class="hero-sub">Every listing on AceX.in ships with the spec sheet up front: SKU, materials, and the numbers that actually matter. No fluff, no guesswork.</p>
+        <div class="hero-cta">
+          <a href="#shop" class="btn btn-primary">Shop the catalog</a>
+          <a href="#deals" class="btn btn-ghost">View deals</a>
+        </div>
+        <dl class="hero-stats">
+          <div><dt>SKUs listed</dt><dd id="statSkus">—</dd></div>
+          <div><dt>Categories</dt><dd id="statCats">—</dd></div>
+          <div><dt>Avg. rating</dt><dd id="statRating">—</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero-visual reveal" aria-hidden="true">
+        <svg id="traceSvg" viewBox="0 0 460 420" fill="none">
+          <g stroke="#262E3A" stroke-width="1.4">
+            <path d="M20 60 H160 V20 H400" />
+            <path d="M20 160 H120" />
+            <path d="M340 20 V140 H440" />
+            <path d="M20 260 H90 V340 H220 V400" />
+            <path d="M300 400 V300 H440" />
+            <path d="M20 360 H60" />
+          </g>
+          <g class="trace-live" stroke="#FF9F1C" stroke-width="1.8" stroke-linecap="round">
+            <path id="tracePath1" d="M20 60 H160 V20 H400" />
+            <path id="tracePath2" d="M20 260 H90 V340 H220 V400" />
+          </g>
+          <g fill="#0A0E14" stroke="#262E3A" stroke-width="1.4">
+            <circle cx="20" cy="60" r="4"/><circle cx="400" cy="20" r="4"/>
+            <circle cx="20" cy="160" r="4"/><circle cx="440" cy="140" r="4"/>
+            <circle cx="20" cy="260" r="4"/><circle cx="220" cy="400" r="4"/>
+            <circle cx="440" cy="300" r="4"/><circle cx="20" cy="360" r="4"/>
+          </g>
+          <g fill="#FF9F1C"><circle cx="20" cy="60" r="2.2"/><circle cx="220" cy="400" r="2.2"/></g>
+
+          <foreignObject x="130" y="140" width="220" height="150">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="hero-chip">
+              <p class="hero-chip-sku">AX-AU-014</p>
+              <p class="hero-chip-name">AeroPods Pro X2</p>
+              <p class="hero-chip-spec">28h battery · ANC · 4.8 IPX</p>
+              <p class="hero-chip-price">$149</p>
+            </div>
+          </foreignObject>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TRUST STRIP ============ -->
+  <section class="trust" id="trust">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M3 7l9-4 9 4-9 4-9-4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M3 7v9l9 4 9-4V7" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      <div><p>Spec-first listings</p><span>Real numbers, every product page</span></div>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="13" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M8 7V5a4 4 0 0 1 8 0v2" stroke="currentColor" stroke-width="1.5"/></svg>
+      <div><p>Demo checkout</p><span>Cart works, payment is simulated</span></div>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 1 1 3 6.2" stroke="currentColor" stroke-width="1.5"/><path d="M4 18v-4h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div><p>Local-first cart</p><span>Saved to this browser only</span></div>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.6 5.8L21 9.6l-4.7 4 1.4 6.4L12 16.9 6.3 20l1.4-6.4L3 9.6l6.4-.8L12 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      <div><p>Open source</p><span>Built to read on GitHub</span></div>
+    </div>
+  </section>
+
+  <!-- ============ SHOP ============ -->
+  <section class="shop" id="shop">
+    <div class="shop-head reveal">
+      <div>
+        <p class="eyebrow">/ FULL CATALOG</p>
+        <h2>Browse the sheet</h2>
+      </div>
+      <div class="shop-controls">
+        <select id="sortSelect" aria-label="Sort products">
+          <option value="default">Sort: Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating-desc">Rating: Best first</option>
+          <option value="name-asc">Name: A–Z</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="chip-row" id="chipRow" role="tablist" aria-label="Filter by category"></div>
+
+    <p class="result-count" id="resultCount"></p>
+
+    <div class="product-grid" id="productGrid"></div>
+    <p class="empty-state" id="emptyState" hidden>No matches on the sheet. Try clearing filters or search.</p>
+  </section>
+
+  <!-- ============ DEALS BANNER ============ -->
+  <section class="deals" id="deals">
+    <div class="deals-inner reveal">
+      <div>
+        <p class="eyebrow">/ AX-DEAL-01</p>
+        <h2>This week: 15% off audio</h2>
+        <p>Applies automatically at cart for anything tagged <span class="mono">AX-AU-*</span>. Demo pricing logic, calculated client-side.</p>
+      </div>
+      <a href="#shop" class="btn btn-primary" id="dealsBtn">Shop audio</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div class="drawer-head">
+    <h3>Cart <span id="drawerCount" class="mono">(0)</span></h3>
+    <button class="icon-btn" id="closeCart" aria-label="Close cart">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="drawer-items" id="drawerItems"></div>
+  <div class="drawer-foot">
+    <div class="drawer-row"><span>Subtotal</span><span class="mono" id="cartSubtotal">$0.00</span></div>
+    <div class="drawer-row deal-row" id="dealRow" hidden><span>Audio discount (15%)</span><span class="mono" id="cartDiscount">−$0.00</span></div>
+    <div class="drawer-row drawer-total"><span>Total</span><span class="mono" id="cartTotal">$0.00</span></div>
+    <button class="btn btn-primary btn-block" id="checkoutBtn">Checkout</button>
+    <p class="drawer-note">Demo project — no live payment processor is connected.</p>
+  </div>
+</aside>
+
+<!-- ============ QUICK VIEW MODAL ============ -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="icon-btn modal-close" id="modalClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+    </button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<!-- ============ TOAST ============ -->
+<div class="toast" id="toast"></div>
+
+<!-- ============ FOOTER ============ -->
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-mark">AceX<span class="logo-dot">.in</span></span>
+      <p>A frontend electronics-store project. Built with HTML, CSS and vanilla JS — no framework, no backend.</p>
+      <form class="newsletter" id="newsletterForm">
+        <input type="email" placeholder="you@email.com" aria-label="Email for newsletter" required>
+        <button type="submit" class="btn btn-primary">Notify me</button>
+      </form>
+    </div>
+
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="#shop">All products</a>
+      <a href="#deals">Deals</a>
+      <a href="#trust">Support</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="https://github.com/" target="_blank" rel="noopener">GitHub repo</a>
+      <a href="#footer">About this project</a>
+      <a href="#footer">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Status</h4>
+      <p class="footer-status"><span class="status-dot"></span> Frontend demo — no live backend, auth, or payments</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 AceX.in — Portfolio project. Not a real store.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
